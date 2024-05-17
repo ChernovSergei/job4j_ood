@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.function.Predicate;
 import java.util.Calendar;
 
-public class Cinema3D implements Cinema{
+public class Cinema3D implements Cinema {
     @Override
     public List<Session> find(Predicate<Session> filter) {
         return new LinkedList<>();
