@@ -16,4 +16,8 @@ abstract class AbstractParking implements Parking {
     }
 
     public abstract List<Integer> getAvailableLots(AbstractCar car);
+
+    public List<AbstractCar> getParkedCars() {
+        return null;
+    }
 }

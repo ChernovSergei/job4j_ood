@@ -11,7 +11,7 @@ public class TruckParking extends AbstractParking {
     public TruckParking(int truckLotsNumber) {
         truckParking = new HashMap<>(truckLotsNumber);
     }
-    
+
     @Override
     public List<Integer> park(AbstractCar car) {
         return new ArrayList<>();
@@ -27,4 +27,8 @@ public class TruckParking extends AbstractParking {
         return null;
     }
 
+    @Override
+    public List<AbstractCar> getParkedCars() {
+        return null;
+    }
 }

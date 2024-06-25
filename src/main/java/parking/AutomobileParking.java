@@ -26,4 +26,9 @@ public class AutomobileParking extends AbstractParking {
     public List<Integer> getAvailableLots(AbstractCar car) {
         return null;
     }
+
+    @Override
+    public List<AbstractCar> getParkedCars() {
+        return null;
+    }
 }
