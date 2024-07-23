@@ -17,7 +17,7 @@ class ParkingControlSystemTest {
     AbstractCar bmwX3 = new Automobile("o000o000", 1);
     AbstractCar chevroletMalibu = new Automobile("q969bk101", 1);
     List<AbstractParking> park = new ArrayList<>();
-    ParkingControlSystem controlSystem = new ParkingControlSystem(park);
+    ParkingControlSystem controlSystem = new ParkingControlSystem(himkiTruckPark, himkiAutoPark);
     List<AbstractCar> cars = new ArrayList<>();
 
     @Test
@@ -53,8 +53,8 @@ class ParkingControlSystemTest {
             controlSystem.registerCar(car);
         }
         controlSystem.registerCar(volvoVH500);
-        assertThat(himkiAutoPark.getParkedCars().contains(manTGX18)).isTrue();
-        assertThat(himkiTruckPark.getParkedCars().contains(manTGX18)).isFalse();
+        assertThat(himkiAutoPark.getParkedCars().contains(volvoVH500)).isTrue();
+        assertThat(himkiTruckPark.getParkedCars().contains(volvoVH500)).isFalse();
     }
 
     @Test
@@ -79,6 +79,7 @@ class ParkingControlSystemTest {
         park.add(himkiAutoPark);
         park.add(himkiTruckPark);
         cars.add(scaniaR500);
+        cars.add(manTGX18);
         cars.add(chevroletMalibu);
         cars.add(kiaRio);
         for (AbstractCar car: cars) {

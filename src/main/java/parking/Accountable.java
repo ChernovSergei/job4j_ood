@@ -1,7 +1,7 @@
 package parking;
 
 public interface Accountable {
-    boolean registerCar(AbstractCar car);
+    void registerCar(AbstractCar car);
 
-    boolean unRegisterCar(AbstractCar car);
+    void unRegisterCar(AbstractCar car);
 }

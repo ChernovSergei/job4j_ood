@@ -3,7 +3,7 @@ package parking;
 import java.util.List;
 
 public interface Parking {
-    List<Integer> park(AbstractCar car);
+    void putIntoParkingLot(AbstractCar car, List<Integer> availableLots);
 
-    boolean remove(AbstractCar car, List<Integer> lots);
+    boolean removeFromParkingLot(AbstractCar car, List<Integer> lots);
 }

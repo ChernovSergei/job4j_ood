@@ -1,5 +1,7 @@
 package parking;
 
+import java.util.Objects;
+
 public class AbstractCar implements Storable {
     String carNumber;
     int requiredSPace;
@@ -34,5 +36,23 @@ public class AbstractCar implements Storable {
     @Override
     public boolean unParked() {
         return false;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        AbstractCar that = (AbstractCar) o;
+        return carNumber.equals(that.carNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(carNumber);
     }
 }

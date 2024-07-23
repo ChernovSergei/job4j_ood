@@ -1,23 +1,29 @@
 package parking;
 
-import java.util.ArrayList;
 import java.util.List;
 
-abstract class AbstractParking implements Parking {
+abstract class AbstractParking {
+    private AbstractParking next;
 
-    @Override
-    public List<Integer> park(AbstractCar car) {
-        return new ArrayList<>();
-    }
-
-    @Override
-    public boolean remove(AbstractCar car, List<Integer> lots) {
-        return false;
-    }
-
-    public abstract List<Integer> getAvailableLots(AbstractCar car);
+    public abstract boolean park(AbstractCar car);
 
     public List<AbstractCar> getParkedCars() {
         return null;
+    }
+
+    public static AbstractParking link(AbstractParking first, AbstractParking... chain) {
+        AbstractParking head = first;
+        for (AbstractParking nextParking : chain) {
+            head.next = nextParking;
+            head = nextParking;
+        }
+        return first;
+    }
+
+    protected boolean checkNextParking(AbstractCar car) {
+        if (next == null) {
+            throw new IllegalArgumentException("Sorry! There is no available lots in the parking");
+        }
+        return next.park(car);
     }
 }
