@@ -7,6 +7,6 @@ public interface Flying {
     boolean land();
 
     boolean loopTheLoop();
-    
+
     boolean noseDive();
 }

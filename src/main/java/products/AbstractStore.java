@@ -1,7 +1,6 @@
 package products;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 abstract class AbstractStore implements Store {
     Map<String, Food> foodStore = new HashMap<>();
@@ -22,4 +21,14 @@ abstract class AbstractStore implements Store {
     }
 
     abstract boolean validate(Food food);
+
+    @Override
+    public List<Food> removeFromStore() {
+        List<Food> result = new ArrayList<>();
+        if (!foodStore.isEmpty()) {
+            Set<String> foods = foodStore.keySet();
+            foods.forEach(f -> result.add(foodStore.get(f)));
+        }
+        return result;
+    }
 }

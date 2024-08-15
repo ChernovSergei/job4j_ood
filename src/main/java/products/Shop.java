@@ -1,6 +1,7 @@
 package products;
 
 import java.util.Calendar;
+import java.util.List;
 import java.util.Map;
 
 public class Shop extends AbstractStore {
@@ -46,5 +47,10 @@ public class Shop extends AbstractStore {
         /**
          * sell the food for a price - discount
          */
+    }
+
+    @Override
+    public List<Food> removeFromStore() {
+        return super.removeFromStore();
     }
 }

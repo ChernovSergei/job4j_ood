@@ -1,6 +1,7 @@
 package products;
 
 import java.util.Calendar;
+import java.util.List;
 import java.util.Map;
 
 public class Trash extends AbstractStore {
@@ -33,5 +34,10 @@ public class Trash extends AbstractStore {
     @Override
     public Map<String, Food> getAllProducts() {
         return super.getAllProducts();
+    }
+
+    @Override
+    public List<Food> removeFromStore() {
+        return super.removeFromStore();
     }
 }
